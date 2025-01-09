@@ -1,0 +1,91 @@
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header header"
+        "aside main main main"
+        "footer footer footer footer";
+    grid-template-rows: 70px 1fr 100px;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+
+}
+
+header {
+    grid-area: header;
+    background-color: #4CAF50;
+    color: white;
+
+}
+
+aside {
+    grid-area: aside;
+    background-color: #f44336;
+    color: white;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+        "main-header main-header"
+        "section1 section2"
+        "article1 article1"
+        "article2 article2";
+    grid-template-rows: 70px 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #4CAF50;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+main > header {
+    grid-area: main-header;
+    background-color: #e91e63;
+    color: white;
+    text-align: center;
+}
+
+section {
+    background-color: #ff9800;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.section1 {
+    grid-area: section1;
+}
+
+.section2 {
+    grid-area: section2;
+}
+
+.article-container1 {
+    grid-area: article1;
+}
+
+.article-container2 {
+    grid-area: article2;
+}
+
+.article-container1, .article-container2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+article {
+    background-color: #64B5F6;
+    text-align: center;
+}
