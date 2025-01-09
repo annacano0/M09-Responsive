@@ -1,4 +1,4 @@
-/*BASIC SETTINGS*/
+/*SHARED SETTINGS*/
 
 body {
   height: 100vh;
@@ -15,8 +15,7 @@ header {
 
 body,
 main,
-.article-container1,
-.article-container2 {
+.article-container {
   display: grid;
   gap: 10px;
 }
@@ -61,12 +60,8 @@ section {
   grid-area: section2;
 }
 
-.article-container1 {
-  grid-area: article1;
-}
-
-.article-container2 {
-  grid-area: article2;
+.article-container {
+  grid-area: article;
 }
 
 article {
@@ -88,15 +83,14 @@ main {
   grid-template-areas:
     "main-header main-header"
     "section1 section2"
-    "article1 article1"
-    "article2 article2";
-  grid-template-rows: 70px 2fr 1fr 1fr;
+    "article article";
+  grid-template-rows: 70px 2fr 2fr;
   grid-template-columns: 1fr 1fr;
 }
 
-.article-container1,
-.article-container2 {
-  grid-template-columns: repeat(5, 1fr);
+.article-container {
+  grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 /*TABLET SCREEN*/
@@ -106,16 +100,19 @@ main {
       "main-header main-header"
       "section1 section1"
       "section2 section2"
-      "article1 article1"
-      "article2 article2";
-    grid-template-rows: 70px 1.5fr 1.5fr 1fr 1fr;
+      "article article";
+    grid-template-rows: 70px 1.5fr 1.5fr 3fr;
     grid-template-columns: 1fr 1fr;
   }
 
-  /*TODO: arreglar el display de los articulos*/
-  .article-container1,
-  .article-container2 {
-    grid-template-columns: repeat(5, 1fr);
+  .article-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .article-container article:last-child {
+    grid-column: span 1;
   }
 }
 
@@ -136,14 +133,16 @@ main {
       "main-header main-header"
       "section1 section1"
       "section2 section2"
-      "article1 article1"
-      "article2 article2";
-    grid-template-rows: 70px 2fr 1fr 1fr;
+      "article article";
+    grid-template-rows: 70px 1fr 1fr 2.5fr;
     grid-template-columns: 1fr 1fr;
   }
-  /*TODO: arreglar el display de los articulos*/
-  .article-container1,
-  .article-container2 {
-    grid-template-columns: repeat(5, 1fr);
+  .article-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .article-container article {
+    height: 100px;
   }
 }
